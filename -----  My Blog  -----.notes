@@ -1,0 +1,384 @@
+---                                Notes                                             ---   
+1.	!Tell .env about the database
+					DB_Database myblog  DB_Username root  DB_passwored (blank)
+---         Laravel ships with several pre-built authentication controllers          ---
+---                       App\Http\Controllers\Auth namespace                        ---
+ a. < RegisterController >        * Handles new user registration *
+ b. < LoginController >           * Handles authentication *
+ c. < ForgotPasswordController >  * Handles emailing links for resetting passwords *
+ d. < ResetPasswordController >   * Contains the logic to reset passwords *
+ #  For many applications, you will not need to modify these controllers at all.
+---                            Authentication Routing                                ---
+  Laravel provides a quick way to scaffold all of the routes and views you need for
+  authentication.
+---                             Authentication Views                                 ---
+  It will create all of the views you need for authentication and place them in the
+  resources/views/auth directory.  It will create resources/views/layouts directory
+  containing a base layout for your application.
+2. !php artisan make:auth!  This command should be used on fresh applications 
+	 and will install a layout, registration and login views, as well as routes for
+	 all authentication end-points.  A HomeController will also be generated to 
+	 handle post-login requests to the application's dashboard.
+3. Before you can login you must run the command !php artisan migrate! which
+   migrates the users table and the password_resets_table.
+4. Creating the Post Model and migration table !php artisan make:model Post -m!  
+5. Add any needed fields to the 2018_02_07_041202_create_posts_table.php
+---        						    $table->string('title');
+---                       $table->text('content');
+---                       $table->integer('category_id'); 
+6. Create the Category Model and migration table !php artisan make:Category -m!
+7. Add just one field to the 2018_02_07_201133_create_categories_table.php
+---                       $table->string('name');
+8. Creating the Relationship between the posts_table and the categories_table.  We will
+do this in the Post Model and the Category Model.
+**************************************Post Model********************************************
+[Laravel]
+class Post extends Model
+{
+   public function category()
+   {
+   		return $this->belongsTo('App\Category');
+   }
+}
+[end]
+***********************     One Post belongs To One Category     ***************************
+**************************************Category Model****************************************
+class Category extends Model
+{
+   public function posts()
+   {
+   		return $this->hasMany('App\Post');		
+   }
+}
+*********************           One Category has Many Posts           **********************
+9. Creating the form in resources/views/admin/posts/create.blade.php This will be the form
+for creating a Post.
+[Laravel]
+@section('content')
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      Create a New Post
+  </div>
+  <div class="panel-body">
+    <form action="/post/store" method="post">
+      {{ csrf_field() }}
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" class="form-control"></input>
+      </div>
+      <div class="form-group">
+        <label for="featured">Featured Image</label>
+        <input type="file" name="featured" class="form-control"></input>
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <div class="text-center">
+          <button class="btn btn-success" type="submit">Save Post</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+[end]
+10.  We need to create the route for the form '/post/store' in routes/web.php 
+---[Laravel]
+Route::post('/post/store', [
+    'uses' => 'PostsController@store',
+    'as' => 'post.store'
+]);
+---[end]
+11. In PostsController, we find the store method and and type the following.
+dd($request->all());
+12. *Route groups and middleware*  
+We are grouping these two routes with the prefix of admin.
+---[Laravel]
+  Route::group(['prefix'=> 'admin'], function() {
+      Route::get('/post/create', [
+      'uses' => 'PostsController@create',
+      'as' => 'post.create'
+      ]);
+      Route::post('/post/store', [
+      'uses' => 'PostsController@store',
+      'as' => 'post.store'
+      ]);
+  });
+---[end]
+13. we need to change the name in our resources/views/admin/posts/create.blade.php from
+<form action="/post/store" method="post">  *To This*  <form action="{{ route('post.store') }}" method="post">
+14. layouts/app.blade.php we changed the route to a name as follows
+ <a href="{{ route('post.create') }}">Create New Post</a>
+---The names are the 'as' => 'post.create' in the routes/web.php path.
+ 15. The middleware we can now Add that protects those grouped routes
+              *Middleware is like filtering our routes*
+---Route::group(['prefix' => 'admin', 'middleware' => 'auth'] it checks to see if the user
+---  is authenticated. We will add an Authentication Check before the form in resource/views/
+---layouts/app.blade.php with 
+[Laravel]
+ @if(Auth::check())
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Navigation Menu</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="/home">Home</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('post.create') }}">Create New Post</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            @endif 
+[end]
+If not authenticated it will not show the post create form or Navigation Menu.
+16. We are going to move the Route::get('/home', 'HomeController@index')->name('home');
+in the the group of prefix admin and middleware Auth. But we have to update that to the
+following. 
+Route::get('/home', [
+      'uses' => 'HomeController@index',
+      'as' => 'home'
+    ]);
+17. We should update the route in in the resources/views/layouts/app.blade.php with
+<li class="list-group-item">
+    <a href="{{ route('home') }}">Home</a>
+</li>
+if not logged in now you won't see the home page you will be directed to the login page.
+18.  *app/Http/Middleware/RedirectIfAuthenticated.php* in this Class file we need
+to update admin/home as follows
+public function handle($request, Closure $next, $guard = null)
+    {
+        if (Auth::guard($guard)->check()) {
+            return redirect('admin/home'); // it was /home
+        }
+
+        return $next($request);
+    }
+Data Validation:
+We can't trust the user, haha lets go to the *PostsController* under the 
+public function store(Request $request)
+$this->validate($request, [
+            'title' => 'required',
+            'featured' => 'required|image', 
+            'content' => 'required'
+        ]);
+remove dd($request->all());
+Set the content to display the errors:
+under the @content in resources/views/admin/posts/create.blade.php
+@section('content')
+  @if(count($errors) > 0)
+    <ul class="list-group">
+      @foreach($errors->all() as $error)
+        <li class="list-group-item text-danger">
+            {{ $error }}
+        </li>
+      @endforeach
+    </ul>
+  @endif
+Update the form with:
+<form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data"> 
+===================================================================================
+Creating another Link in our Navigation Menu for Creating a Catgegory:
+19.  resources/views/layouts.app.blade.php
+<li class="list-group-item">
+    <a href="{{ route('category.create') }}">Create New Category</a>
+</li>
+Create route for that link:
+20. In routes/web.php create the following
+Route::get('/category/create', [
+        'uses' => 'CategoriesController@create',
+        'as' => 'category.create'
+    ]);
+Create the CategoriesController:
+21. php artisan make:controller CategoriesController --resource
+Go to the create method in the CategoriesController we just created:
+22. return view('admin.categories.create');
+Create a folder in admin named categories then a file nanmed create.blade.php:
+23. Copy the create.blade.php file from admin/posts.create.blade.php into the
+categories/create.blade.php
+24. We make some changes the that form based on its needs.  Only needs one item in form
+and changed route to       route('category.store')
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      Create a New Category
+  </div>
+  <div class="panel-body">
+    <form action="{{ route('category.store') }}" method="post">
+      {{ csrf_field() }}
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control"></input>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" type="submit">
+          Save Category
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+Create the route in web.php:
+25.
+Route::post('/category/store', [
+        'uses' => 'CategoriesController@store',
+        'as' => 'category.store'
+    ]);
+Create the store method in CategoriesController and validation:
+26.
+public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        dd($request->all());
+    }
+27. We now need to update the store method with the following code now:
+[Laravel]
+public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        $category = new Category; 
+        $category->name = $request->name;
+        $category->save();
+        return redirect()-back();
+    }
+  [end]
+28. We need to migrate the table before we can enter any data:
+---php artisan migrate
+29. How do we see those categories now?
+In the admin/categories folder we will create a new index.blade.php file:
+---index.blade.php       create a table in the @section('content') 
+@extends('layout.app')
+
+@section('content')
+<table class="table-hover">
+  <thead>
+    <!-- the head titles below -->
+    <th>
+      Category Name
+    </th>
+    <th>
+      Editing
+    </th>
+    <th>
+      Delete
+    </th>
+  </thead>
+  <!-- our body will be here -->
+  <tbody>
+    
+  </tbody>
+</table>
+
+
+@stop
+30. We set up the route
+---this way we can view the index method by going to web.php
+Route::get('/categories', [
+        'uses' => 'CategoriesController@index',
+        'as' => 'categories'
+    ]);
+Going the the CategoriesController we need to update the index method:
+public function index()
+    {
+        return view('admin.categories.index')->with('categories', Category::all());
+    }
+31. We can go back to our view in admin/categories/index.blade.php
+Here we will do a foreach loop: 
+<tbody>
+    @foreach($categories as $category)
+        <tr>
+            <td>
+                {{ $category->name}}
+            </td>
+        </tr>
+    @endforeach
+  </tbody>
+  32. We need to create a link in our layouts/app.blade.php file
+<li class="list-group-item">
+    <a href="{{ route('categories') }}">Categories</a>
+</li>
+  33. We need to put the table inside of *panel-body*  and the panel-body will 
+  be inside the panel panel-primary and give it a panel-heading Categories.
+  34. Next an Edit and Delete Button 
+  <td>
+    <a href="{{ route('category.edit') }}" class="btn btn-info btn-xsm">Edit</a>
+   </td>
+   35. Create the edit route in web.php
+   Route::get('/category/edit/{id}', [
+        'uses' => 'CategoriesController@edit',
+        'as' => 'category.edit'
+    ]);
+
+   36. Create the edit button in index.blade.php
+   <td>
+      <a href="{{ route('category.edit', ['id' => $category->id ]) }}" class="btn btn-info btn-xsm">
+        Edit
+      </a>
+  </td> 
+  37. Create the delete button in index.blade.php
+  <td>
+    <a href="{{ route('category.delete', ['id' => $category->id ]) }}" class="btn btn-danger btn-xsm">
+      Delete
+    </a>
+  </td>
+  38. Let's go to web.php to update the delete method
+  Route::get('/category/delete/{id}', [
+        'uses' => 'CategoriesController@destroy',
+        'as' => 'category.delete'
+    ]);
+  39.  We need to create the CategoriesController edit and delete method
+  public function edit($id)
+    {
+        $category = Category::find($id);
+
+        return view('admin.categories.edit')->with('category', $category);
+    }
+
+    40. We need to create the file edit.blade.php in resources/admin/categories/
+    we will copy create.blade.php and then make some adjustments.
+    41.  creating the includes folder and the errors.blade.php file for the errors.
+---Then create the @include in both edit and create with the path admin/includes/errors
+    @if(count($errors) > 0)
+        <ul class="list-group">
+          @foreach($errors->all() as $error)
+            <li class="list-group-item text-danger">
+                {{ $error }}
+            </li>
+          @endforeach
+        </ul>
+      @endif 
+    42.  Make adjustments to the edit.blade.php
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+      Update Category:  {{ $category->name }}
+      </div>
+      <div class="panel-body">
+        <form action="{{ route('category.update') }}" method="post">
+          {{ csrf_field() }}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value = "{{ $category->name }}" class="form-control"></input>
+          </div>
+          <div class="form-group">
+            <div class="text-center">
+              <button class="btn btn-success" type="submit">
+                Update Category
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    43.  We don't have the update route so back to web.php
+  Route::post('category/update/{id}', [
+        'uses' => 'CategoriesController@update',
+        'as' => 'category.update'
+  ]);  
+    44.  Back to edit.blade.php to            *pass in the id*
+<form action="{{ route('category.update', ['id' => $category->id]) }}" method="post">
+    45.
