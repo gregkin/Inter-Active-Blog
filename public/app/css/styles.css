@@ -65,11 +65,11 @@
 /*------------- #VARIABLES --------------*/
 /*------------- #GLOBAL STYLES --------------*/
 
-
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+ }
 
 body {
   position: relative;
@@ -84,7 +84,8 @@ img {
   max-width: 100%;
   height: auto;
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle; 
+}
 
 blockquote {
   -webkit-margin-before: 0;
@@ -1774,7 +1775,8 @@ h6, .h6 {
       z-index: 50;
       transition: all .6s ease; }
       .post-standard .post-thumb .link-post:hover {
-        color: #4cc2c0; }
+        color: #4cc2c0;
+      }
     .post-standard .post-thumb.custom-bg {
       background-size: cover;
       background-position: center; }
@@ -3164,6 +3166,7 @@ textarea {
       .header nav.not-nav-add {
         padding-right: 0; } }
   .header .header-content-wrapper {
+    background-color: purple;
     position: relative;
     float: left;
     width: 100%; }

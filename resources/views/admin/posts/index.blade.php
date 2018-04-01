@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <!--Creating the table for posts  -->
-<div class="panel panel-primary">
-			<div class="panel-heading">
+<div class="panel panel-custom">
+			<div class="panel-heading nav-menu">
 					Published Posts
 			</div>
 				<div class="panel-body" height="40px">
-					<table class="table table-responsive">
+					<table class="table table-striped table-responsive">
 						<thead>
 								<th class="text-center">
 										Image

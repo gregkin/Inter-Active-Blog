@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <!--Creating the table for categories  -->
-<div class="panel panel-primary">
-			<div class="panel-heading">
-					All Categories
+<div class="panel panel-custom">
+			<div class="panel-heading nav-menu">
+					List of All Categories
 			</div>
 				<div class="panel-body">
 					<table class="table table-striped table-condensed">
 						<thead>
-								<th>
+								<th class = "ind">
 										Category Name
 								</th>
 								<th>
@@ -22,7 +22,7 @@
 						@if($categories->count() > 0)
 							@foreach($categories as $category)
 									<tr>
-											<td>
+											<td class = "ind">
 													{{ $category->name}}
 											</td>
 											<td>

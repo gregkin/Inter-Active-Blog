@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <!--Creating the table for posts  -->
-<div class="panel panel-primary">
-			<div class="panel-heading">
+<div class="panel panel-custom">
+			<div class="panel-heading nav-menu">
 					Trash Bin
 			</div>
 				<div class="panel-body">

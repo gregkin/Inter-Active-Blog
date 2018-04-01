@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 	@include('admin.includes.errors')
-<div class="panel panel-primary">
-		<div class="panel-heading">
+<div class="panel panel-custom">
+		<div class="panel-heading nav-menu">
 			Create a New Post
 		</div>
 		<div class="panel-body">
@@ -25,10 +25,10 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="tags">Select Tags</label>
+				<label for="tags">Select Tags: </label>
 				@foreach($tags as $tag)
 					<div class="checkbox">
-      		<label><input type="checkbox" name="tags[]"value="{{ $tag->id }}">{{ $tag->tag }}</label>
+      		<label><input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->tag }}</label>
     			</div>
 				@endforeach
 			</div>
@@ -39,7 +39,7 @@
 			</div>
 			<div class="form-group">
 					<div class="text-center">
-					<button class="btn btn-success" type="submit">Save Post</button>
+					<button class="btn btn-custom" type="submit">Save Post</button>
 					</div>
 			</div>
 		</form>

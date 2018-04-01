@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 	@include('admin.includes.errors')
-<div class="panel panel-primary">
-	<div class="panel-heading">
+<div class="panel panel-custom">
+	<div class="panel-heading nav-menu">
 			Edit Tag {{ $tag->tag }}
 	</div>
 	<div class="panel-body">
@@ -14,7 +14,7 @@
 			</div>
 			<div class="form-group">
 				<div class="text-center">
-					<button class="btn btn-success" type="submit">
+					<button class="btn btn-custom" type="submit">
 						Update Tag
 					</button>
 				</div>

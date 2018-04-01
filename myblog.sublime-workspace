@@ -4,6 +4,98 @@
 		"selected_items":
 		[
 			[
+				"per",
+				"perspective-origin"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"text",
+				"text-shadow"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tabel-",
+				"table-cell"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"table-",
+				"table-striped \tBootstrap 3 Class"
+			],
+			[
+				"table",
+				"table-striped \tBootstrap 3 Class"
+			],
+			[
+				"backgro",
+				"background"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"background-image",
+				"background-image: 〔property〕"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"tran",
+				"transparent"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"transition",
+				"transition-duration"
+			],
+			[
+				"contact_",
+				"contact_number"
+			],
+			[
+				"avatar",
+				"avatar_new_name"
+			],
+			[
 				"navbar-c",
 				"navbar-collapse \tBootstrap 3 Class"
 			],
@@ -18,14 +110,6 @@
 			[
 				"a",
 				"alt\tAttr"
-			],
-			[
-				"background",
-				"background-image"
-			],
-			[
-				"ba",
-				"background-size"
 			],
 			[
 				"pan",
@@ -48,20 +132,12 @@
 				"featured_new_name"
 			],
 			[
-				"table",
-				"table-condensed \tBootstrap 3 Class"
-			],
-			[
 				"Categoies",
 				"CategoriesController"
 			],
 			[
 				"panel",
 				"panel-heading"
-			],
-			[
-				"font",
-				"font-weight"
 			],
 			[
 				"list-group",
@@ -136,10 +212,6 @@
 				"max-width"
 			],
 			[
-				"margin",
-				"margin-bottom"
-			],
-			[
 				"FETC",
 				"FETCH_OBJ"
 			],
@@ -158,10 +230,6 @@
 			[
 				"_",
 				"_SESSION"
-			],
-			[
-				"back",
-				"background-repeat"
 			],
 			[
 				"set",
@@ -188,20 +256,8 @@
 				"num_15"
 			],
 			[
-				"border",
-				"border-radius"
-			],
-			[
 				"fon",
 				"font-size"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"text",
-				"text-center \tBootstrap 3 Class"
 			],
 			[
 				"flex",
@@ -214,10 +270,6 @@
 			[
 				"colu",
 				"column-span"
-			],
-			[
-				"tran",
-				"transition"
 			],
 			[
 				"conta",
@@ -266,14 +318,6 @@
 			[
 				"padd",
 				"padding-bottom"
-			],
-			[
-				"padding",
-				"padding-top"
-			],
-			[
-				"align",
-				"align-self"
 			],
 			[
 				"box",
@@ -470,10 +514,6 @@
 			[
 				"text-tr",
 				"text-transform"
-			],
-			[
-				"ani",
-				"animation-delay"
 			]
 		]
 	},
@@ -620,7 +660,7 @@
 	},
 	"console":
 	{
-		"height": 241.0,
+		"height": 355.0,
 		"history":
 		[
 			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
@@ -653,62 +693,104 @@
 	},
 	"expanded_folders":
 	[
+		"/C/laragon/www/myblog"
 	],
 	"file_history":
 	[
+		"/C/laragon/www/myblog/app/Http/Controllers/HomeController.php",
+		"/C/laragon/www/myblog/resources/views/admin/dashboard.blade.php",
+		"/C/laragon/www/myblog/resources/views/includes/header.blade.php",
+		"/C/laragon/www/myblog/resources/views/index.blade.php",
+		"/C/laragon/www/myblog/resources/views/layouts/frontend.blade.php",
 		"/C/laragon/www/myblog/resources/views/layouts/app.blade.php",
-		"/C/laragon/www/myblog/resources/views/auth/login.blade.php",
-		"/C/laragon/www/myblog/database/seeds/UsersTableSeeder.php",
-		"/C/laragon/www/myblog/app/Http/Controllers/Auth/LoginController.php",
+		"/C/laragon/www/myblog/public/app/css/styles.css",
+		"/C/laragon/www/myblog/public/app/css/primary-menu.css",
 		"/C/laragon/www/myblog/routes/web.php",
-		"/C/laragon/www/myblog/app/Http/Middleware/RedirectIfAuthenticated.php",
-		"/C/laragon/www/myblog/app/Http/Middleware/VerifyCsrfToken.php",
+		"/C/laragon/www/myblog/public/app/css/grid.css",
+		"/C/laragon/www/myblog/public/uploads/avatar/1521612842userprofile.jpg",
+		"/C/laragon/www/myblog/public/uploads/avatar/1521334708userprofile.jpg",
+		"/C/laragon/www/myblog/public/uploads/avatar/1519883908userprofile.jpg",
+		"/C/laragon/www/myblog/resources/views/results.blade.php",
+		"/C/laragon/www/myblog/resources/assets/sass/app.scss",
+		"/C/laragon/www/myblog/resources/views/single.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/posts/edit.blade.php",
+		"/C/laragon/www/myblog/resources/views/includes/search.blade.php",
+		"/C/laragon/www/myblog/resources/views/includes/form.blade.php",
+		"/C/laragon/www/myblog/config/newsletter.php",
+		"/C/laragon/www/myblog/resources/views/admin/categories/index.blade.php",
+		"/C/laragon/www/myblog/config/app.php",
+		"/C/laragon/www/myblog/vendor/spatie/laravel-newsletter/src/NewsletterFacade.php",
+		"/C/laragon/www/myblog/resources/views/tag.blade.php",
+		"/C/laragon/www/myblog/.env",
+		"/C/laragon/www/myblog/resources/views/admin/posts/index.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/users/index.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/tags/index.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/users/create.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/categories/create.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/posts/trashed.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/posts/create.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/settings/settings.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/tags/create.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/tags/edit.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/users/profile.blade.php",
+		"/C/laragon/www/myblog/resources/views/admin/categories/edit.blade.php",
+		"/C/laragon/www/myblog/resources/views/auth/login.blade.php",
+		"/C/laragon/www/myblog/resources/views/home.blade.php",
+		"/C/laragon/www/myblog/public/uploads/avatar/1519883875e31d11e0b671b35b.accountpicture-ms",
+		"/C/laragon/www/myblog/public/uploads/posts/bubble_files/gestalt-f91cfa1b07a324f5a141651347c64dd0.css",
+		"/C/laragon/www/myblog/public/uploads/posts/bubble_files/common_desktop-6074a137c3cde391fb07f936cba4b716.css",
+		"/C/laragon/www/myblog/app/Http/Controllers/PostsController.php",
 		"/C/laragon/www/myblog/app/Http/Controllers/UsersController.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/ProfilesController.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/FrontEndController.php",
+		"/C/laragon/www/myblog/app/Post.php",
+		"/C/laragon/www/myblog/app/User.php",
+		"/C/laragon/www/myblog/app/Tag.php",
+		"/C/laragon/www/myblog/database/migrations/2018_03_14_220047_insert_user_id_column.php",
+		"/C/laragon/www/myblog/resources/views/includes/disqus.blade.php",
+		"/C/laragon/www/myblog/database/migrations/2018_03_14_214548_insert_user_id_column.php",
+		"/C/laragon/www/myblog/public/css/app.css",
+		"/C/laragon/www/myblog/resources/views/category.blade.php",
+		"/C/laragon/www/myblog/blog theme/category.html",
+		"/C/Users/mrgre/AppData/Roaming/Typora/themes/night.css",
+		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Installed Packages/Monokai-Midnight.tmTheme",
+		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Installed Packages/Neon Color Scheme.sublime-package",
+		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Neon Color Scheme/Neon.tmTheme",
+		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Seti_orig.sublime-theme",
+		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Seti.sublime-theme",
+		"/C/laragon/www/myblog/blog theme/single.html",
+		"/C/laragon/www/myblog/resources/views/includes/footer.blade.php",
+		"/C/laragon/www/myblog/app/Setting.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/SettingsController.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/CategoriesController.php",
+		"/C/laragon/www/myblog/database/seeds/DatabaseSeeder.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/TagsController.php",
+		"/C/laragon/www/myblog/database/seeds/SettingsTableSeeder.php",
+		"/C/laragon/www/myblog/database/migrations/2018_03_02_141502_create_settings_table.php",
+		"/C/laragon/www/myblog/database/seeds/UsersTableSeeder.php",
 		"/C/laragon/www/myblog/app/Http/Kernel.php",
 		"/C/laragon/www/myblog/app/Http/Middleware/Admin.php",
-		"/C/laragon/www/myblog/resources/views/admin/users/index.blade.php",
+		"/C/laragon/www/myblog/app/Http/Controllers/Auth/LoginController.php",
+		"/C/laragon/www/myblog/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/C/laragon/www/myblog/app/Http/Middleware/VerifyCsrfToken.php",
 		"/C/laragon/www/myblog/app/Profile.php",
-		"/C/laragon/www/myblog/resources/views/home.blade.php",
-		"/C/laragon/www/myblog/resources/views/admin/tags/create.blade.php",
-		"/C/laragon/www/myblog/resources/views/admin/users/create.blade.php",
 		"/C/laragon/www/myblog/database/migrations/2018_02_23_204155_create_profiles_table.php",
-		"/C/laragon/www/myblog/app/User.php",
-		"/C/laragon/www/myblog/app/Http/Controllers/TagsController.php",
-		"/C/laragon/www/myblog/resources/views/admin/posts/index.blade.php",
-		"/C/laragon/www/myblog/resources/views/admin/posts/create.blade.php",
-		"/C/laragon/www/myblog/app/Http/Controllers/PostsController.php",
-		"/C/laragon/www/myblog/resources/views/admin/posts/edit.blade.php",
 		"/C/laragon/www/myblog/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/C/laragon/www/myblog/resources/views/admin/tags/edit.blade.php",
-		"/C/laragon/www/myblog/app/Tag.php",
-		"/C/laragon/www/myblog/app/Post.php",
-		"/C/laragon/www/myblog/app/Http/Controllers/CategoriesController.php",
-		"/C/laragon/www/myblog/resources/views/admin/tags/index.blade.php",
 		"/C/laragon/www/myblog/database/migrations/2018_02_21_030312_create_post_tag_table.php",
 		"/C/laragon/www/myblog/database/migrations/2018_02_20_235911_create_tags_table.php",
 		"/C/laragon/www/myblog/bootstrap/app.php",
-		"/C/laragon/www/myblog/resources/views/admin/posts/trashed.blade.php",
-		"/C/laragon/www/myblog/resources/views/admin/categories/index.blade.php",
 		"/C/Users/mrgre/Documents/HymDiaywG/By7tjpJDM.json",
-		"/C/laragon/www/myblog/resources/views/admin/categories/create.blade.php",
 		"/C/laragon/www/myblog/public/uploads/posts/1518760237beach.png",
 		"/C/laragon/www/myblog/app/Http/Controllers/Auth/RegisterController.php",
 		"/C/laragon/www/myblog/database/migrations/2018_02_07_041202_create_posts_table.php",
-		"/C/laragon/www/myblog/database/seeds/DatabaseSeeder.php",
 		"/C/laragon/www/myblog/database/migrations/2018_02_07_201133_create_categories_table.php",
-		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Neon Color Scheme/Neon.tmTheme",
-		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Seti.sublime-theme",
-		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Installed Packages/Neon Color Scheme.sublime-package",
 		"/C/Users/mrgre/Downloads/Seti_UX-master/Seti.tmTheme",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Widgets/Widget - Seti.sublime-settings",
-		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Seti_orig.sublime-theme",
 		"/C/laragon/www/myblog/-----  My Blog  -----.notes",
-		"/C/laragon/www/myblog/resources/views/admin/categories/edit.blade.php",
 		"/C/laragon/www/myblog/public/js/toastr.min.js",
 		"/C/laragon/www/myblog/public/css/toastr.min.css",
 		"/C/laragon/www/myblog/resources/views/admin/includes/errors.blade.php",
 		"/C/laragon/www/myblog/resources/views/welcome.blade.php",
-		"/C/laragon/www/myblog/app/Http/Controllers/HomeController.php",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Main/folder_opened_hover-0@2x.jpg",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
@@ -719,7 +801,6 @@
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/PlainTasks (Windows).sublime-settings",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/messages/Tutorial.todo",
 		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/messages/install.txt",
-		"/C/laragon/www/myblog/.env",
 		"/C/laragon/www/myblog/--------  My Blog  --------",
 		"/C/laragon/www/myblog/---- Quick Start Guide -----",
 		"/C/laragon/www/myblog/app/Http/Controllers/Controller.php",
@@ -743,55 +824,15 @@
 		"/C/laragon/www/laravel-blog/database/seeds/UsersTableSeeder.php",
 		"/C/laragon/www/laravel-blog/app/Http/Controllers/Auth/RegisterController.php",
 		"/C/laragon/www/laravel-blog/app/Http/Controllers/CategoriesController.php",
-		"/C/laragon/www/laravel-blog/public/css/toastr.min.css",
-		"/C/laragon/www/laravel-blog/public/js/toastr.min.js",
-		"/C/laragon/www/laravel-blog/resources/views/admin/includes/errors.blade.php",
-		"/C/laragon/www/laravel-blog/bootstrap/app.php",
-		"/C/laragon/www/laravel-blog/app/Http/Middleware/RedirectIfAuthenticated.php",
-		"/C/laragon/www/laravel-blog/app/Http/Controllers/HomeController.php",
-		"/C/laragon/www/laravel-blog/resources/views/welcome.blade.php",
-		"/C/laragon/www/laravel-blog/database/migrations/2018_01_31_222658_create_categories_table.php",
-		"/C/laragon/www/laravel-blog/app/Category.php",
-		"/C/laragon/www/laravel-blog/.env",
-		"/C/laragon/www/todos/resources/views/todos.blade.php",
-		"/C/laragon/www/todos/routes/web.php",
-		"/C/laragon/www/todos/resources/views/layout.blade.php",
-		"/C/laragon/www/todos/app/Http/Controllers/TodosController.php",
-		"/C/laragon/www/todos/resources/views/update.blade.php",
-		"/C/laragon/www/todos/app/Todo.php",
-		"/C/laragon/www/todos/resources/views/new.blade.php",
-		"/C/laragon/www/todos/resources/views/welcome.blade.php",
-		"/C/laragon/www/todos/database/seeds/TodosTableSeeder.php",
-		"/C/laragon/www/todos/database/migrations/2018_01_26_001332_create_todos_table.php",
-		"/C/laragon/www/todos/database/seeds/DatabaseSeeder.php",
-		"/C/laragon/www/todos/app/Http/Controllers/PagesController.php",
-		"/C/laragon/www/todos/database/factories/UserFactory.php",
-		"/C/laragon/www/todos/.env",
-		"/C/Users/mrgre/projects/tasks/resources/views/welcome.blade.php",
-		"/C/Users/mrgre/projects/tasks/.env",
-		"/C/Users/mrgre/projects/todos/resources/views/welcome.blade.php",
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/C/Users/mrgre/projects/todos/Homestead.yaml",
-		"/C/Users/mrgre/projects/todos/.env",
-		"/C/Users/mrgre/projects/vueschool-forum/static/css/thread.html",
-		"/C/Users/mrgre/projects/vueschool-forum/src/components/HelloWorld.vue",
-		"/C/Users/mrgre/projects/vueschool-forum/index.html",
-		"/C/Users/mrgre/projects/vueschool-forum/static/css/style.css",
-		"/C/Users/mrgre/projects/vueschool-forum/src/data.json",
-		"/C/Users/mrgre/projects/vueschool-forum/.eslintrc.js",
-		"/C/Users/mrgre/projects/vueschool-forum/.eslintignore",
-		"/C/Users/mrgre/AppData/Roaming/Sublime Text 3/Packages/vue-syntax-highlight-master/vue.sublime-settings",
-		"/C/xampp/htdocs/RESTfulAPI/.env",
-		"/C/xampp/htdocs/RESTfulAPI/app/Http/Controllers/User/UserController.php",
-		"/C/xampp/htdocs/RESTfulAPI/app/Exceptions/Handler.php"
+		"/C/laragon/www/laravel-blog/public/css/toastr.min.css"
 	],
 	"find":
 	{
-		"height": 84.0
+		"height": 73.0
 	},
 	"find_in_files":
 	{
-		"height": 260.0,
+		"height": 530.0,
 		"where_history":
 		[
 		]
@@ -801,6 +842,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"header site-header",
+			"header #site-header",
+			"header-content-wrapper",
+			"primary-menu",
+			"col-lg-10.col",
+			"col-lg-10",
+			"post-thumb",
+			"img",
+			"hentry",
+			"hentry.post",
+			"    </",
+			"stunning headers",
+			"lightviolet",
+			"Bubble",
+			"Laravel",
+			"class = \"navbar-brand\"",
+			"class = navbar-brand",
+			"sudebar",
+			"65",
+			"div class=\"row\">",
+			"stunning-header",
+			"6",
 			"login",
 			"comment",
 			"dict",
@@ -829,11 +892,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 84.0
+		"height": 73.0
 	},
 	"input":
 	{
-		"height": 94.0
+		"height": 200.0
 	},
 	"layout":
 	{
@@ -858,6 +921,14 @@
 		]
 	},
 	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 388.0
+	},
 	"output.exec":
 	{
 		"height": 196.0
@@ -874,7 +945,7 @@
 	"project": "myblog.sublime-project",
 	"replace":
 	{
-		"height": 163.0
+		"height": 141.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -886,6 +957,46 @@
 			[
 				"web",
 				"routes\\web.php"
+			],
+			[
+				"homec",
+				"app\\Http\\Controllers\\HomeController.php"
+			],
+			[
+				"we",
+				"routes\\web.php"
+			],
+			[
+				"insert",
+				"database\\migrations\\2018_03_14_214548_insert_user_id_column.php"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"w",
+				"routes\\web.php"
+			],
+			[
+				"fron",
+				"app\\Http\\Controllers\\FrontEndController.php"
+			],
+			[
+				"frone",
+				"app\\Http\\Controllers\\FrontEndController.php"
+			],
+			[
+				"setti",
+				"app\\Setting.php"
+			],
+			[
+				"settingsta",
+				"database\\migrations\\2018_03_02_141502_create_settings_table.php"
+			],
+			[
+				"users",
+				"app\\Http\\Controllers\\UsersController.php"
 			],
 			[
 				"usersc",
@@ -906,10 +1017,6 @@
 			[
 				"app.",
 				"bootstrap\\app.php"
-			],
-			[
-				"we",
-				"routes\\web.php"
 			],
 			[
 				"layouts/",
@@ -1060,7 +1167,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 305.0,
+	"side_bar_width": 308.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

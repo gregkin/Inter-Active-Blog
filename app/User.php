@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Post;
 use App\Profile;
+use Illuminate\Support\Facades\App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -30,5 +32,9 @@ class User extends Authenticatable
     public function profile()
     {
       return $this->hasOne('App\Profile');  
+    }
+    public function posts()
+    {
+      return $this->hasMany('App\Post');  
     }
 }

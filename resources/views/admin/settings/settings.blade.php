@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 	@include('admin.includes.errors')
-<div class="panel panel-primary">
-	<div class="panel-heading">
+<div class="panel panel-custom">
+	<div class="panel-heading nav-menu">
 			Edit Blog Settings
 	</div>
 	<div class="panel-body">

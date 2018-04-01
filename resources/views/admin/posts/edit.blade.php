@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 	@include('admin.includes.errors')
-<div class="panel panel-primary">
-		<div class="panel-heading">
+<div class="panel panel-custom">
+		<div class="panel-heading nav-menu">
 			Edit Post: {{ $post->title }}
 		</div>
 		<div class="panel-body">
@@ -54,5 +54,15 @@
 		</form>
 	</div>
 </div>
-
+@stop
+@section('styles')
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+@stop
+@section('scripts')
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script>
+	$(document).ready(function() {
+        $('#content').summernote();
+    });
+</script>
 @stop
